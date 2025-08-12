@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Music</title>
+
+    <!-- Google Font - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class=" text-gray-800">
+    
+    <h1 class="text-3xl font-bold text-center mt-10">🎵 Welcome to API Music</h1>
+<div class="container flex justify-center mt-5 relative m-auto">
+    <input 
+        class="px-5 py-3 w-10/12  md:w-8/12 lg:w-6/12 shadow-md focus:outline-none focus:border-cyan-700 border-2 rounded-md transition-all duration-300"
+        type="search" 
+        placeholder="Search here"
+    >
+  <i onclick="search()" class="search fa-solid text-lg fa-magnifying-glass relative -left-14  top-9  transform -translate-y-1/2 text-gray-500"></i>
+</div>
+
+<div class="container m-auto my-20 w-10/12">
+    <div class="music-card container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 ">
+        
+    <div style="width: 85vw;" id="loader" class="spinner-border hidden text-danger flex justify-center " >
+        <span class="text-3xl ">Loading...</span>
+    </div>
+
+</div>
+
+<div class="flex justify-center">
+    <button onclick="moreCard()" id="moreBtn"  class="mt-5 bg-black  hover:bg-gray-800 text-xl-center justify-center text-white px-5 py-2 rounded-md shadow-md transition-all duration-300 flex items-center gap-2 hidden ">more videos</button>
+</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
