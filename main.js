@@ -29,7 +29,7 @@ function search(){
             loader.classList.remove("hidden")    
             const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SEARCH_QUERY)}&type=video&maxResults=${numberCard}&key=${API_KEY}`);
             const data = await response.json();
-            
+            console.log(data.items)
             dispalyMusic(data.items)
         }
             catch (error) {
@@ -59,11 +59,11 @@ function search(){
                         ${e.snippet.description}
                     </p>
                     <!-- زر التشغيل -->
-                    <button style="width: 95%;" 
+                    <a target="_blank" href="https://www.youtube.com/watch?v=${e.id.videoId}" style="width: 95%;" 
                         class="m-auto bg-cyan-600 hover:bg-cyan-700  text-white px-5 py-2 rounded-md shadow-md transition-all duration-300 flex items-center gap-2"
                     >
                         <i class="fa-solid fa-play"></i> Play
-                    </button>
+                    </a>
                 </div>
             </div>
             `
